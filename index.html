@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modal - Web Component</title>
+    <script src="./modal-component.js"></script>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .my-modal-content{
+            padding:1.5em;
+        }
+    </style>
+</head>
+<body>
+    <modal-component show="false" title="This is your header text" width="500px">
+        <div class="my-modal-content">
+            <h3>Modal content goes here...</h3>
+        </div>
+    </modal-component>
+    <button>Click to show modal</button>
+<script>
+;(function(document){
+    let modal = document.body.querySelector('modal-component');
+    document.body.querySelector('button').addEventListener('click', (e)=>{
+        modal.setAttribute('show', 'true');
+        e.preventDefault();
+    });
+})(document)
+</script>
+
+</body>
+</html>
